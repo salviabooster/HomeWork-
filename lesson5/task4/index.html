@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Document</title>
+</head>
+<body>
+	<h4>Завдання №4</h4>
+	<p class="text">Вивести таблицю з 3 рядків і 7 стовпців</p>
+	<script>
+	const tableRow = 3, tableColumn = 7
+	document.write(`<table class='table'>`)
+		
+		for (let i = 1; i <= tableRow; i++) {
+			document.write(`<tr'>`)
+			for(let j = 1; j <= tableColumn; j++) {
+				document.write(`<td> ${j} </td>`)
+			}
+		document.write(`</tr>`)
+	}
+	document.write(`</table>`)
+
+
+
+	</script>
+</body>
+</html>

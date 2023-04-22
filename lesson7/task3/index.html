@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<h2>
+		Задача 3. Створити окремі функції, які для 4 чисел знаходять:
+		1) суму;
+		2) добуток;
+		3)середнє арифметичне;
+		4)мінімальне значення.
+	</h2>
+	<script>
+
+const userNum1 = parseInt(prompt('Введіть перше число'))
+const userNum2 = parseInt(prompt('Введіть друге число'))
+const userNum3 = parseInt(prompt('Введіть третє число'))
+const userNum4 = parseInt(prompt('Введіть четверте число'))
+
+function getNumberSum(userNum1, userNum2, userNum3, userNum4) {
+	return userNum1 + userNum2 + userNum3 + userNum4
+}
+function getNumberProduct(userNum1, userNum2, userNum3, userNum4) {
+	return userNum1 * userNum2 * userNum3 * userNum4
+}
+function getNumberAritheticMean(userNum1, userNum2, userNum3, userNum4) {
+	return (userNum1 + userNum2 + userNum3 + userNum4) / 4
+}
+function getNumberMinValue(userNum1, userNum2, userNum3, userNum4) {
+	let minNumber = userNum1
+	if(userNum2 < minNumber) minNumber = userNum2
+	if(userNum3 < minNumber) minNumber = userNum3
+	if(userNum4 < minNumber) minNumber = userNum4
+	return  minNumber
+}
+document.write(`
+Сума чисел ${getNumberSum(userNum1, userNum2, userNum3, userNum4)} <br>
+Добуток чисел ${getNumberProduct(userNum1, userNum2, userNum3, userNum4)} <br>
+Середнє арифметичне ${getNumberAritheticMean(userNum1, userNum2, userNum3, userNum4)} <br>
+Мінімальне значення ${getNumberMinValue(userNum1, userNum2, userNum3, userNum4)} <br>
+`
+)
+	</script>
+	
+</body>
+</html>

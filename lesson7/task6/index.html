@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<h2>Задача 6. Створити функцію, яка створює таблицю з вказаною кількістю рядків і стовпців(таблиця заповнюється заданим
+	фіксованим повідомленням).</h2>
+	<script>
+
+function selfCreatedTable (rowsAmount, columnsAmount, message) {
+	let table = `<table border='1'>
+		<tbody>`
+		for(let i = 1; i <= rowsAmount; i++) {
+			table += `<tr>`
+				for(let k = 1; k <= columnsAmount; k++) {
+					table += `<td>${message}</td>`
+				}
+				table += `</tr>`
+		}
+		table += `</table> 
+		</tbody>`
+		return table
+}
+
+const userRowsAmount = parseInt(prompt('Введіть кількість рядків в таблиці'))
+const userColumnsAmount = parseInt(prompt('Введіть кількість рядків в таблиці'))
+const userMessage = prompt('Введіть текс який буде в стовбцях','Hi')
+
+document.write(selfCreatedTable(userRowsAmount, userColumnsAmount, userMessage))
+
+	</script>
+	
+</body>
+</html>

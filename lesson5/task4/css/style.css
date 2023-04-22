@@ -1,0 +1,29 @@
+body {
+	background-color: rgba(249, 93, 36, 0.521);
+	text-align: center;
+	
+}
+ul {
+	display: inline-block;
+}
+li {
+	font-size: 18px;
+	text-decoration: underline;
+	color: rgba(7, 66, 69, 0.693);
+}
+.text {
+	font-size: 18px;
+	color: rgb(14, 93, 97);
+	font-weight: 700;
+}
+h4 {
+	font-size: 25px;
+	text-decoration: overline;
+}
+.table {
+	display: inline-block;
+	padding: 10px;
+	background-color: rgb(204, 100, 100);
+	border: 2px solid rgb(27, 237, 237);
+	color: #fff;
+}

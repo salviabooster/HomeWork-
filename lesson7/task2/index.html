@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js"></script>
+</head>
+<body>
+<h2>Задача 2. Створити функцію, яка за номером дня дозволяє з’ясувати чи є цей день робочим.</h2>
+<script>
+
+// const userNumberDay = parseInt(prompt('Введіть номер дня від 1 до 7, щоб з`ясувати чи є цей день робочим.'))
+// function daysWeek (userNumberDay) {
+// 	switch (userNumberDay) {
+// 		case 1:
+// 		case 2:
+// 		case 3:
+// 		case 4:
+// 		case 5: return 'Робочий'
+// 		case 6:
+// 		case 7: return 'Вихідний'
+// 		default: return 'Помилкове введення'
+// 	}
+// }
+// document.write(daysWeek(userNumberDay))
+
+const dayNumber = parseInt(prompt('Введіть номер дня від 1 до 7, щоб з`ясувати чи є цей день робочим.'))
+function workingDays (dayNumber) {
+	return  dayNumber >= 1 && dayNumber <=5
+}
+if (workingDays(dayNumber))
+	document.write('Робочий')
+	else 
+	document.write('Вихідний')
+	</script>
+</body>
+</html>

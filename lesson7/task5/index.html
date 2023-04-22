@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<h2>Задача 5. Створити окремі функції, які переводять:
+		Сантиметри у дюйми;
+		Кілограми у фунти;
+		Кілометри у милі.
+	</h2>
+	<script>
+
+const inch = 0.393701
+const lb = 2.20462
+const mile = 0.621371
+
+const userCm = parseFloat(prompt('Введіть число яке хочете перевести з сантиметрів в дюйми'))
+function convertCmToInches (cm) {
+	return cm * inch
+}
+
+const userKg = parseFloat(prompt('Введіть число яке хочете перевести з кілограмів в фунти'))
+function convertKgToLb(kg) {
+	return kg * lb
+}
+
+const userKm = parseFloat(prompt('Введіть число яке хочете перевести з кілометрів в милі'))
+function convertKmToMiles(km) {
+	return km * mile
+}
+const resultInches = convertCmToInches(userCm)
+const resultLbs = convertKgToLb(userKg)
+const resultMiles = convertKmToMiles(userKm)
+
+
+document.write(`
+	${userCm} Сантиметрів = ${resultInches.toFixed(4)} дюйма <br>
+	${userKg} Кілограма = ${resultLbs.toFixed(4) } фунів <br>
+	${userKm} Кілометра = ${resultMiles.toFixed(4) } милі <br>
+`)
+
+	</script>
+	
+</body>
+</html>

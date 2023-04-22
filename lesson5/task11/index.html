@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Document</title>
+</head>
+<body>
+	<h4>Завдання №11</h4>
+	<p class="text">Знайти суму 5 непарних чисел, що знаходяться між заданими користувачем числами.</p>
+<script>
+let firstUserNumber = parseInt(prompt('Введіть '))
+let secondUserNumber = parseInt(prompt('Введіть '))
+
+if(firstUserNumber > secondUserNumber) {
+	const temp = firstUserNumber
+	firstUserNumber = secondUserNumber
+	secondUserNumber = temp
+	
+}
+
+let oddCorrentNumber = firstUserNumber+1,
+oddNumberSum = 0
+
+for(let correntNumber = firstUserNumber; correntNumber < secondUserNumber && oddCorrentNumber < 5; correntNumber++) {
+	if(oddCorrentNumber %2 !==0) {
+		oddNumberSum += correntNumber
+		oddCorrentNumber++
+	}
+}
+document.write(`${oddNumberSum}`)
+</script>
+</body>
+</html>

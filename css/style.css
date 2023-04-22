@@ -1,0 +1,21 @@
+body {
+	background-color: rgba(124, 86, 86, 0.537);
+	text-align: center;
+}
+
+h2 {
+	font-size: 30px;
+	text-shadow: 2px 1px 3px #000;
+	text-decoration: underline;
+}
+a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: 700;
+	text-transform: uppercase;
+	transition: color 0.3s ease 0s;
+
+}
+a:hover {
+	color: rgb(87, 79, 79);
+}
