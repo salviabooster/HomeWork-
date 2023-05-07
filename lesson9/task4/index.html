@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js"></script>
+</head>
+<body>
+<h2>4.Дано масив елементів. Вивести на екран елементи, що більші за 100
+</h2>
+<script>
+	
+const userNumber = parseInt(prompt('Введіть число елементів в массиві'))
+
+function randomNumber (number) {
+	const arrayOfRandomNumbers = []
+	for (let i = 0; i < userNumber; i++) {
+		const randomNum = Math.floor(Math.random() * (200))
+		arrayOfRandomNumbers.push(randomNum)
+	}
+	return arrayOfRandomNumbers
+}
+
+const numberOver_100 = []
+const resultRandoms = randomNumber(userNumber)
+
+for (let over_100 of resultRandoms){
+	if(over_100 > 100) numberOver_100.push(over_100)
+}
+
+document.write(`Всі елементи масиву ${resultRandoms}<br>
+Елементи більше за 100 - ${numberOver_100}
+`)
+
+</script>
+</body>
+</html>

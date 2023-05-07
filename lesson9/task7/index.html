@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<h2>7.Дано масив цін. Змінити цей масив так, що на ціни товарів, які більші за 1000 грн. дати 30% знижки.</h2>
+	<script>
+	function getRandomNumber(min, max) {
+		const arrayRandoNumbers = []
+		for (let i = 0; i < 10; i++) {
+			const randomNumber = Math.floor(Math.random() * (max - min) + min);
+			arrayRandoNumbers.push(randomNumber)
+		}
+		return arrayRandoNumbers
+	}
+	const randomNumbers = getRandomNumber(1,2000)
+	document.write(`Ціни без знижки: ${randomNumbers}<br>`)
+	const sale = 0.7
+
+	randomNumbers.forEach((element,index, currentArray) => {
+	if(element > 1000) {
+		currentArray[index] *= sale
+		currentArray[index] = (currentArray[index]).toFixed(1)
+	}
+});
+
+document.write(`Зі ЗНИЖКОЮ 30%: ${randomNumbers}`)
+	</script>
+	
+</body>
+</html>
