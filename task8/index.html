@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<h2>8.Дано масив номерів авто. Сформувати новий масив тих, які починаються на «А»</h2>
+	<script>
+	
+	
+	const arrayOfCarNumbers = ['ВЕ5948КВ', 'АС7382ОО', 'АІ9187НЕ', 'КХ3723МР', 'ОН7654РЕ', 'ВР4708СР', 'СМ9823КН', 'НТ5511МХ', 'ВН1937НС', 'КМ1879СТ'];
+	const newArr = arrayOfCarNumbers.filter((el) => el.indexOf('А') === 0 );
+
+		document.write(`Всі номери: ${arrayOfCarNumbers} <br>
+		Номери які починаються на А: ${newArr}
+		`);
+	</script>
+	
+</body>
+</html>

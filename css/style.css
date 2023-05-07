@@ -1,21 +1,30 @@
 body {
-	background-color: rgba(124, 86, 86, 0.537);
+	background-color: rgb(128, 122, 122);
+}
+.title {
+	font-size: 28px;
 	text-align: center;
 }
-
-h2 {
-	font-size: 30px;
-	text-shadow: 2px 1px 3px #000;
-	text-decoration: underline;
+.list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
 }
-a {
-	color: #fff;
-	text-decoration: none;
+
+.item{
+	list-style-type: none;
+
+}
+
+.link {
+	font-size: 20px;
 	font-weight: 700;
-	text-transform: uppercase;
+	color: rgb(209, 227, 46);
+	text-shadow: 1px 1px 1px #000;
 	transition: color 0.3s ease 0s;
-
+	
 }
-a:hover {
-	color: rgb(87, 79, 79);
+.link:hover {
+	color: rgb(123, 133, 28);
 }
