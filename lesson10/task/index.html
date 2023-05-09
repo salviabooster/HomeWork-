@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<h2>Задача. Дано історію цін на цінні папери за деякий період (згенерувати від 1 до 10000)
+		
+	</h2>
+<script>
+
+function getRandomPrices (minValue, maxValue) {
+	let randomPrices = []
+	for (let i = 0; i < 10; i++) {
+		const randomNumber = minValue + Math.floor(Math.random() * (maxValue - minValue + 1))
+		randomPrices.push(randomNumber)
+	}
+	return randomPrices
+}
+const arrayRandomSum = getRandomPrices(1, 10000)
+document.write(`Масив цін цінних паперів: ${arrayRandomSum}`)
+
+
+document.write(`<h4>2) Сформувати новий масив, у якому є номери тільки тих, що більші за 1000 грн.</h4>`)
+const pricesOver_1000 = arrayRandomSum.reduce((prevPrice, element,index) => {
+	if(element > 1000) prevPrice.push(index)
+	return prevPrice
+}
+,[])
+document.write(`Номери елементів які більше за 1000: ${pricesOver_1000}`)
+
+
+document.write(`<h4>3) Сформувати список з тих цін, які більші за попереднє значення</h4>`)
+const valueIsGreaterThanPreviousOne = arrayRandomSum.reduce((prevResult, currentPrice, index) => {
+	if(index > 0 && currentPrice > arrayRandomSum[index - 1])
+		prevResult.push(currentPrice)
+	return prevResult
+},[])
+document.write(`Більші за попереднє значення: ${valueIsGreaterThanPreviousOne}`);
+
+
+document.write(`<h4>4)Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального</h4>`)
+const maxValue = arrayRandomSum.reduce((prevMax, element) => 
+	element > prevMax ? element  : prevMax
+,-Infinity)
+document.write(`Максимальне значення: ${maxValue}<br>`);
+
+const pricesPercentageOfMaximumCost = arrayRandomSum.map(element => ((element / maxValue) * 100).toFixed(2))
+document.write(`У відсотках від максимального значення: ${pricesPercentageOfMaximumCost}`);
+
+
+document.write(`<h4>5)Підрахувати кількість змін цін</h4>`)
+const numberOfPriceChanges = arrayRandomSum.reduce((count, currentPrice, index) =>{
+	if(index > 0 && currentPrice !== arrayRandomSum[index -1]) count ++
+	return count
+}
+,0)
+document.write(`Цина мінялась: ${numberOfPriceChanges} раз`);
+
+
+document.write(`<h4>	6) Визначити, чи є ціна, що менше 1000</h4>`)
+const priceLessThan_1000 = arrayRandomSum.find((element)=> element < 1000)
+const resultText1 = priceLessThan_1000 ? "так" : "ні";
+document.write(`Чи є ціна яка менше 1000: ${resultText1}, ${priceLessThan_1000}`);
+
+
+document.write(`<h4>7) Визначати, чи усі ціни більше за 1000</h4>`)
+const allPricesGreaterThan_1000 = arrayRandomSum.every((element)=> element > 1000)
+const resultText2 = allPricesGreaterThan_1000 ? "так" : "ні";
+document.write(`Чи усі ціни більше за 1000?: ${resultText2}`);
+
+
+document.write(`<h4>8)Підрахувати кількість цін, що більше за 1000</h4>`)
+const numberOfPrices = arrayRandomSum.filter((element) => element > 1000)
+document.write(`Кількість цін які більше за 1000: ${numberOfPrices.length}`);
+
+
+document.write(`<h4>9)Підрахувати суму цін, що більше за 1000</h4>`)
+const totalSumPrices = arrayRandomSum.reduce((prevSum, currentPrice) =>{
+	if(currentPrice > 1000)
+	return prevSum + currentPrice
+	else return prevSum
+}
+,0)
+document.write(`Cума всіх цін які більше за 1000: ${totalSumPrices}`);
+
+
+
+document.write(`<h4>10)Знайти першу ціну, що більше за 1000</h4>`)
+const firstPriceLessThan_1000 = arrayRandomSum.find((element) => element > 1000)
+document.write(`Кількість цін які більше за 1000: ${firstPriceLessThan_1000}`);
+
+
+
+document.write(`<h4>11)Знайти індекс першої ціни, що більше за 1000</h4>`)
+const firstIndexGreaterThan_1000 = arrayRandomSum.findIndex((element) => element > 1000)
+document.write(`Кількість цін які більше за 1000: ${firstIndexGreaterThan_1000}`);
+
+
+
+
+document.write(`<h4>12)Знайти останню ціну, що більше за 1000</h4>`)
+let lastPriceGreaterThan_1000
+for (const element of arrayRandomSum) {
+	if(element > 1000)
+	lastPriceGreaterThan_1000 = element
+}
+document.write(`Остання ціна яка більше за 1000: ${lastPriceGreaterThan_1000}`);
+
+
+
+document.write(`<h4>13)Знайти індекс останньої ціни, що більше за 1000</h4>`)
+let lastIndexGreaterThan_1000
+arrayRandomSum.forEach((element, index) => {
+	if( element > 1000)
+	lastIndexGreaterThan_1000 = index
+})
+if(lastIndexGreaterThan_1000 !== undefined)
+	document.write(`Остання ціна що більше за 1000: ${lastIndexGreaterThan_1000}`);
+	else 
+	document.write(`Нема підходящого результату`);
+	
+</script>
+	
+</body>
+</html>
