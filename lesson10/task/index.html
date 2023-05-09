@@ -114,17 +114,23 @@ document.write(`Остання ціна яка більше за 1000: ${lastPri
 
 
 
+// document.write(`<h4>13)Знайти індекс останньої ціни, що більше за 1000</h4>`)
+// let lastIndexGreaterThan_1000
+// arrayRandomSum.forEach((element, index) => {
+// 	if( element > 1000)
+// 	lastIndexGreaterThan_1000 = index
+// })
+// if(lastIndexGreaterThan_1000 !== undefined)
+// 	document.write(`Остання ціна що більше за 1000: ${lastIndexGreaterThan_1000}`);
+// 	else
+// 	document.write(`Нема підходящого результату`);
+
 document.write(`<h4>13)Знайти індекс останньої ціни, що більше за 1000</h4>`)
-let lastIndexGreaterThan_1000
-arrayRandomSum.forEach((element, index) => {
-	if( element > 1000)
-	lastIndexGreaterThan_1000 = index
-})
-if(lastIndexGreaterThan_1000 !== undefined)
-	document.write(`Остання ціна що більше за 1000: ${lastIndexGreaterThan_1000}`);
-	else 
-	document.write(`Нема підходящого результату`);
-	
+let lastIndexGreaterThan_1000 = arrayRandomSum.findLastIndex((element) => element > 1000)
+document.write(`Остання ціна яка більше за 1000: ${lastIndexGreaterThan_1000}`);
+
+
+
 </script>
 	
 </body>
