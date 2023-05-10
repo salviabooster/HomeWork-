@@ -14,7 +14,7 @@
 <script>
 
 const numberOfElements = parseInt(prompt('Введіть кількість елементів'))
-const halfArray = Math.round(numberOfElements /2)
+const halfArray = Math.floor(numberOfElements /2)
 const numbersArray = new Array(numberOfElements).fill('Один',0, halfArray).fill('Ноль', halfArray)
 
 document.write(`${numbersArray}`)
